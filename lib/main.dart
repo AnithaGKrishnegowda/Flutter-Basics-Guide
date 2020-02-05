@@ -11,11 +11,30 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('This is AppBar'),
-        ),
-        body: Text('This is My Default Text'),
-      ),
+          appBar: AppBar(
+            title: Text('This is AppBar'),
+          ),
+          body: Column(
+            children: [
+              Text('The Questions!!'),
+              RaisedButton(
+                child: Text('Answer1'),
+                onPressed: null,
+              ),
+              RaisedButton(
+                child: Text('Answer2'),
+                onPressed: null,
+              ),
+              RaisedButton(
+                child: Text('Answer3'),
+                onPressed: null,
+              ),
+              RaisedButton(
+                child: Text('Answer4'),
+                onPressed: null,
+              ),
+            ],
+          )),
     );
   }
 }
