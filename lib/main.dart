@@ -6,13 +6,27 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+
+      @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
+
 
   int questionIndex =0;
 
   void answerQuestion(){
+    setState(() {
+         questionIndex=questionIndex+1;
+
+    });
+  
    // print('Answer Choosen!!');
-   questionIndex=questionIndex+1;
    print(questionIndex);
   }
   @override
@@ -26,7 +40,8 @@ var questions = [
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('This is AppBar'),
+            title: Text('Question & Answer'),
+            
           ),
           body: Column(
             children: [
