@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
     const questions = const [
       {
         'questionText': 'What\'s your favorite Color?',
-        'answers': ['black', 'white', 'pink', 'orange','red'],
+        'answers': ['Black', 'White', 'Pink', 'Orange','Red','Green'],
       },
       {
         'questionText': 'What\'s your favorite Animal?',
@@ -41,20 +41,41 @@ class _MyAppState extends State<MyApp> {
       },
       {
         'questionText': 'Who is your best Teacher?',
-        'answers': ['DR Suresh', 'Shashikala', 'Basavaraju', 'KN Sir'],
+        'answers': ['DR Suresh sir', 'Shashikala sir', 'Basavaraju sir', 'KN sir','Chamayya sir','Puttaswamy sir','NS Sir'],
       },
       {
-        'questionText': 'Who is your best Friend?',
-        'answers': ['Somashekhar', 'Anu', 'Suchithra', 'all'],
+        'questionText': 'Who is your best Friends?',
+        'answers': ['Somashekhar', 'Anu', 'Suchithra', 'All Others'],
+      },
+      {
+        'questionText': 'What\'s your Strengths',
+        'answers': ['Innovater', 'TeamLeader/TeamPlayer', 'GoalOriented', 'Hardworker','Focused'],
+      },
+      {
+        'questionText': 'What\'s your Weakness',
+        'answers': ['Can\'t say NO to anyone', 'Being too Good'],
       },
     ];
 
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Question & Answer'),
+            title: Text('Question & Answer App'),
           ),
-          body: Column(
+
+
+body: Stack(
+        children: <Widget>[
+          Center(
+            child: new Image.asset(
+              'assets/images/goal.jpg',
+             
+              fit: BoxFit.fill,
+            ),
+          ),
+
+
+           Column(
             children: [
               Question(
                 questions[_questionIndex]['questionText'],
@@ -65,7 +86,11 @@ class _MyAppState extends State<MyApp> {
               }).toList()
              
             ],
-          )),
+          ),
+           ],
+          ),
+       
+      ),
     );
   }
 }
